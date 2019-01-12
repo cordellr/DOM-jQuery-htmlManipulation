@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //creates button1
+    //creates Nice Message button
     let button1 = document.createElement("button");
     document.body.appendChild(button1);
     let button1Text = document.createTextNode("Nice Message");
