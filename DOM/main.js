@@ -44,12 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
         nameDiv.appendChild(spanName);
         let myName = document.createTextNode("Cordell");
         spanName.appendChild(myName);
-        addName.removeEventListener("click", oneAddName);
+        addNameButton.removeEventListener("click", oneAddName);
     }
 
     //listens for click on addName button, then runs oneAddName function
-    addName.addEventListener("click", oneAddName);
+    addNameButton.addEventListener("click", oneAddName);
 
+    //list of friends (some real, some imaginary...)
+    let friends = ["Greg", "Ash", "Tanner", "Travis", "Jon", "Mark","Jeff","Steve","Ryan","Jacob"];
+
+    //function for adding friend's name to list, only runs once
+    function friendListFunction() {
+        for (let i=0; i < friends.length; i++) {
+            //create list item, append to list, add friend's name from array according to i array number
+            let friendItem = document.createElement("li");
+            friendList.appendChild(friendItem);
+            let friendName = document.createTextNode(friends[i]);
+            friendItem.appendChild(friendName);
+        }
+        addFriendButton.removeEventListener("click", friendListFunction);
+    }
+
+    //adds friend's name to list when button is clicked
+    addFriendButton.addEventListener("click", friendListFunction);
 
 
 });
