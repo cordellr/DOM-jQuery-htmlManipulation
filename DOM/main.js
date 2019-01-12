@@ -38,5 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("paragraph1").style.color = randomColor;
     });
 
+    //adds span and name to site when addName is clicked, only allows it to run once
+    function oneAddName() {
+        let spanName = document.createElement("span");
+        nameDiv.appendChild(spanName);
+        let myName = document.createTextNode("Cordell");
+        spanName.appendChild(myName);
+        addName.removeEventListener("click", oneAddName);
+    }
+
+    //listens for click on addName button, then runs oneAddName function
+    addName.addEventListener("click", oneAddName);
+
+
 
 });
